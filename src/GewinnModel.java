@@ -3,4 +3,34 @@ public class GewinnModel {
     private int spielerZahl;
     private int computerZahl;
     private int rundenErgebnis;
+
+    public GewinnModel() {}
+
+    public int getGesamtPunkte() {
+        return gesamtPunkte;
+    }
+
+    public int getComputerZahl() {
+        return computerZahl;
+    }
+
+    public int getRundenErgebnis() {
+        return rundenErgebnis;
+    }
+
+    public void berechneComputerZahl() {
+
+    }
+
+    public void berechneRunde(int spielerZahl) {
+
+    }
+
+    public boolean hatGewonnen() {
+
+    }
+
+    public boolean hatVerloren() {
+        
+    }
 }
