@@ -1,3 +1,5 @@
+package model;
+
 /**
  * The logic class for a small number game
  * @author Sebastian Steiner
