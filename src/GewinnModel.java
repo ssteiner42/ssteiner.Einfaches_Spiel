@@ -9,7 +9,9 @@ public class GewinnModel {
     private int computerZahl;
     private int rundenErgebnis;
 
-    public GewinnModel() {}
+    public GewinnModel() {
+        this.gesamtPunkte = 30;
+    }
 
     public int getGesamtPunkte() {
         return gesamtPunkte;
