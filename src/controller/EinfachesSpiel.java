@@ -10,11 +10,13 @@ public class EinfachesSpiel implements ActionListener {
     private EinfachesSpielFrame view;
     private GewinnModel model;
 
-    static void main(String[] args) {new EinfachesSpiel()}
+    static void main(String[] args) {
+        new EinfachesSpiel();
+    }
 
     public EinfachesSpiel() {
         this.model = new GewinnModel();
-        this.view = new EinfachesSpielFrame();
+        this.view = new EinfachesSpielFrame(this);
     }
 
     @Override
