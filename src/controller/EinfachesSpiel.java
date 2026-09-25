@@ -24,6 +24,9 @@ public class EinfachesSpiel implements ActionListener, KeyListener {
         this.view = new EinfachesSpielFrame(this, this);
     }
 
+    /*
+     * Code that gets called if the button is pressed
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
@@ -33,7 +36,9 @@ public class EinfachesSpiel implements ActionListener, KeyListener {
             view.setSpielerZahl("");
         }
     }
-
+    /*
+     * the Code that gets called when enter is pressed in the textbox
+     */
     @Override
     public void keyTyped(KeyEvent e) {
         if (e.getKeyChar() == KeyEvent.VK_ENTER && view.getSpielerZahl() > 0 && view.getSpielerZahl() < 10) {
