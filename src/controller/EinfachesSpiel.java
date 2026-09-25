@@ -5,6 +5,7 @@ import view.EinfachesSpielFrame;
 
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -36,6 +37,7 @@ public class EinfachesSpiel implements ActionListener, KeyListener {
             view.setSpielerZahl("");
             view.unlockInput();
             view.deactivateButton();
+            view.setLabelColor(Color.WHITE);
         }
     }
     /*
@@ -48,6 +50,7 @@ public class EinfachesSpiel implements ActionListener, KeyListener {
             view.setComputerZahl(model.getComputerZahl());
             view.setErg(model.getRundenErgebnis());
             view.setGes(model.getGesamtPunkte());
+            view.setLabelColor(model.getColor());
             view.lockInput();
             view.activateButton();
         }

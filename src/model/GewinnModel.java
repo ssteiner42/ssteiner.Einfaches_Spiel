@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.*;
+
 /**
  * The logic class for a small number game
  * @author Sebastian Steiner
@@ -10,6 +12,7 @@ public class GewinnModel {
     private int spielerZahl;
     private int computerZahl;
     private int rundenErgebnis;
+    private Color c;
 
     public GewinnModel() {
         this.gesamtPunkte = 30;
@@ -23,14 +26,26 @@ public class GewinnModel {
         return String.valueOf(computerZahl);
     }
 
+    public Color getColor() {
+        return c;
+    }
+
     public String getRundenErgebnis() {
         if(hatGewonnen()) {
+            c = Color.green;
             return "Gewonnen";
         }
         else if(hatVerloren()) {
+            c = Color.RED;
             return "Verloren";
         }
         else {
+            if(rundenErgebnis >= 0) {
+                c = Color.GREEN;
+            }
+            else {
+                c = Color.RED;
+            }
             return String.valueOf(rundenErgebnis);
         }
     }

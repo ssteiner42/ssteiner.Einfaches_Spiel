@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 
@@ -52,6 +53,10 @@ public class EinfachesSpielFrame extends JFrame {
 
     public void setGes(String ges) {
         this.ges.setText(ges);
+    }
+
+    public void setLabelColor(Color c) {
+        esP.setLabelColor(c);
     }
 
     public void lockInput() {
