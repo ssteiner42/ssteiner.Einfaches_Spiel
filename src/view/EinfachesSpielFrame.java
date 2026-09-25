@@ -13,6 +13,7 @@ public class EinfachesSpielFrame extends JFrame {
     private JTextField computerNumber;
     private JLabel erg;
     private JLabel ges;
+    private JButton b;
 
     public EinfachesSpielFrame(ActionListener controller, KeyListener key) {
         super("Zahlen-Gewinnspiel (v1.0)");
@@ -24,6 +25,7 @@ public class EinfachesSpielFrame extends JFrame {
         ges = esP.getGes();
         text.addKeyListener(key);
         esP.getButton().addActionListener(controller);
+        b = esP.getButton();
         this.setVisible(true);
     }
 
@@ -50,5 +52,21 @@ public class EinfachesSpielFrame extends JFrame {
 
     public void setGes(String ges) {
         this.ges.setText(ges);
+    }
+
+    public void lockInput() {
+        text.setEnabled(false);
+    }
+
+    public void unlockInput() {
+        text.setEnabled(true);
+    }
+
+    public void activateButton() {
+        b.setEnabled(true);
+    }
+
+    public void deactivateButton() {
+        b.setEnabled(false);
     }
 }

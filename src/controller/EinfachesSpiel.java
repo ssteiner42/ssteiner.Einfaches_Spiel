@@ -34,6 +34,8 @@ public class EinfachesSpiel implements ActionListener, KeyListener {
             view.setErg(" ");
             view.setComputerZahl("");
             view.setSpielerZahl("");
+            view.unlockInput();
+            view.deactivateButton();
         }
     }
     /*
@@ -46,6 +48,8 @@ public class EinfachesSpiel implements ActionListener, KeyListener {
             view.setComputerZahl(model.getComputerZahl());
             view.setErg(model.getRundenErgebnis());
             view.setGes(model.getGesamtPunkte());
+            view.lockInput();
+            view.activateButton();
         }
     }
 
