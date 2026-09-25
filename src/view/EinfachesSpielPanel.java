@@ -63,4 +63,9 @@ public class EinfachesSpielPanel extends JPanel{
     public JLabel getGes() {
         return ges;
     }
+
+    public void setLabelColor(Color c) {
+        erg.setBackground(c);
+        ges.setBackground(c);
+    }
 }
