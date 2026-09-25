@@ -2,26 +2,53 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 
+/**
+ * The JFrame Class for the game with all the Methods for the controller
+ */
 public class EinfachesSpielFrame extends JFrame {
     private EinfachesSpielPanel esP = new EinfachesSpielPanel();
     private JTextField text;
     private JTextField computerNumber;
+    private JLabel erg;
+    private JLabel ges;
 
-    public EinfachesSpielFrame(ActionListener controller) {
+    public EinfachesSpielFrame(ActionListener controller, KeyListener key) {
         super("Zahlen-Gewinnspiel (v1.0)");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(esP);
-        text = esP.getText;
-        esP.getButton.addActionListener(controller);
+        text = esP.getText();
+        computerNumber = esP.getComputerText();
+        erg = esP.getErg();
+        ges = esP.getGes();
+        text.addKeyListener(key);
+        esP.getButton().addActionListener(controller);
         this.setVisible(true);
     }
 
     public int getSpielerZahl() {
-        return Integer.parseInt(text.getText());
+        try {
+            return Integer.parseInt(text.getText());
+        }
+        catch (NumberFormatException e) {
+            return 10;
+        }
     }
 
-    public void setComputerZahl(int number) {
+    public void setSpielerZahl(String zahl) {
+        text.setText(zahl);
+    }
+
+    public void setComputerZahl(String number) {
         computerNumber.setText(String.valueOf(number));
+    }
+
+    public void setErg(String erg) {
+        this.erg.setText(erg);
+    }
+
+    public void setGes(String ges) {
+        this.ges.setText(ges);
     }
 }

@@ -15,29 +15,38 @@ public class GewinnModel {
         this.gesamtPunkte = 30;
     }
 
-    public int getGesamtPunkte() {
-        return gesamtPunkte;
+    public String getGesamtPunkte() {
+        return String.valueOf(gesamtPunkte);
     }
 
-    public int getComputerZahl() {
-        return computerZahl;
+    public String getComputerZahl() {
+        return String.valueOf(computerZahl);
     }
 
-    public int getRundenErgebnis() {
-        return rundenErgebnis;
+    public String getRundenErgebnis() {
+        if(hatGewonnen()) {
+            return "Gewonnen";
+        }
+        else if(hatVerloren()) {
+            return "Verloren";
+        }
+        else {
+            return String.valueOf(rundenErgebnis);
+        }
     }
 
     public void berechneComputerZahl() {
         this.computerZahl = (int) (Math.random()*9)+1;
     }
 
-    /**
+    /*
      * calculates the amount of points the player gets this round
      * and updates the attributes
      * @param spielerZahl the number entered the player
      */
     public void berechneRunde(int spielerZahl) {
         this.spielerZahl = spielerZahl;
+        this.berechneComputerZahl();
         if(spielerZahl == this.computerZahl) {
             this.rundenErgebnis = 20;
         }
